@@ -18,5 +18,11 @@ class TestCases {
 		var game = new Game();
 		assertTrue(game.GetWelcomeMessage() == "Welcome!");
 	}
+	
+	@Test
+	void canViewARoomDescription() {
+		var game = new Game();
+		assertTrue(game.GetRoom() != "");
+	}
 
 }
