@@ -4,11 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 class TestCases {
-
-	@Test
-	void testsWillRun() {
-		assertTrue(true);
-	}
 	
 	@Test
 	void willPrintWelcomeMessage() {

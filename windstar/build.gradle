@@ -24,13 +24,11 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:28.2-jre'
 
-    // Use JUnit test framework
-    testImplementation 'junit:junit:5.7.0'
-    
+    // Use JUnit test framework    
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
 
 test {
 	useJunitPlatform()
-{
+}
