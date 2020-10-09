@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class PlainTextFileSystem implements IFileSystem{
+public class PlainTextFileSystem implements IFileSystem {
 
 	FileReader _fileReader;
 	BufferedReader _bufferedReader;
@@ -16,25 +16,12 @@ public class PlainTextFileSystem implements IFileSystem{
 	@Override
 	public String getNextRoom() {
 		try {
+			printDirectory();
 			
+			buildFileVariables();
 			
-			File dir = new File("content//rooms");
-			File[] filesList = dir.listFiles();
-			for (File file : filesList) {
-//			    if (file.isFile()) {
-			        System.out.println(file.getAbsolutePath());
-//			    }
-			}
+			readAllOfFile();
 			
-			
-			_fileReader = new FileReader("/Users/matthewfisher/Documents/Source/windstar/windstar/content/rooms/Room0.txt");
-			_bufferedReader = new BufferedReader(_fileReader);
-			_stringbuilder = new StringBuilder();
-			_line = _bufferedReader.readLine();
-			while (_line != null) {
-				_stringbuilder.append(_line);
-				_line = _bufferedReader.readLine();
-			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -43,4 +30,26 @@ public class PlainTextFileSystem implements IFileSystem{
 		return _stringbuilder.toString();
 	}
 
+	private void readAllOfFile() throws IOException {
+		while (_line != null) {
+			_stringbuilder.append(_line);
+			_line = _bufferedReader.readLine();
+		}
+	}
+
+	private void buildFileVariables() throws FileNotFoundException, IOException {
+		_fileReader = new FileReader("/Users/matthewfisher/Documents/Source/windstar/windstar/content/rooms/Room0.txt");
+		_bufferedReader = new BufferedReader(_fileReader);
+		_stringbuilder = new StringBuilder();
+		_line = _bufferedReader.readLine();
+	}
+	
+	private void printDirectory () {
+		File dir = new File("content//rooms");
+		File[] filesList = dir.listFiles();
+		for (File file : filesList) {
+		        System.out.println(file.getAbsolutePath());
+		}
+	}
 }
+
