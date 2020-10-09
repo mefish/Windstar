@@ -4,6 +4,10 @@ public class Game {
 	private String _welcomeMessage = "Welcome!";
 	private IFileSystem _fileSystem;
 	
+	public Game() {
+		_fileSystem = new PlainTextFileSystem();
+	}
+	
 	public Game(IFileSystem fileSystem) {
 		_fileSystem = fileSystem;
 	}
