@@ -4,8 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-
-class TestCases {
+class GameTests {
 	
 	@Mock
 	IFileSystem fileSystem;
